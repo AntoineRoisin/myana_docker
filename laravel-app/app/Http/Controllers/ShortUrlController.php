@@ -23,7 +23,8 @@ class ShortUrlController extends Controller
 
     }
 
-    public function redirect($short_url) {
+    public function redirect($short_url): View
+    {
         $short_url = $this->ShortUrlService->getShortUrlByHash($short_url);
 
         $short_url = $this->ShortUrlService->addVisit($short_url);
@@ -31,7 +32,7 @@ class ShortUrlController extends Controller
         return view('shorturl.redirect')->with(['url' => $short_url->url, 'is_deleted' => $short_url->deleted_at ? true : false]);
     }
 
-    public function create()
+    public function create(): View
     {
         return view('shorturl.create');
     }

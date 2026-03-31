@@ -18,12 +18,13 @@ class ShortUrl extends Model
         'short_url',
     ];
 
-    public static function generateShortUrl()
+    public static function generateShortUrl(): string
     {
         return substr(md5(uniqid(rand(), true)), 0, 6);
     }
 
-    public function getValidityDate() {
+    public function getValidityDate(): Carbon
+    {
         return new Carbon($this->created_at)->addMonths(3);
     }
 

@@ -19,7 +19,7 @@ class ShortUrlService
     }
 
 
-    public function addVisit($short_url)
+    public function addVisit($short_url): ShortUrl
     {
         $query = app(ShortUrlQuery::class);
 

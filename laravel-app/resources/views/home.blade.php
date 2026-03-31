@@ -55,17 +55,8 @@
     </div>
 </div>
     <script>
-        const span = document.querySelector("span.shortlink");
-
-        span.onclick = function() {
-            document.execCommand("copy");
-        }
-
-        span.addEventListener("copy", function(event) {
-            event.preventDefault();
-            if (event.clipboardData) {
-                event.clipboardData.setData("text/plain", span.textContent);
-            }
+        $('span.shortlink').click(function() {
+            navigator.clipboard.writeText($(this).html());
         });
     </script>
     <style>
