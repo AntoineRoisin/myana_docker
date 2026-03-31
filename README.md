@@ -5,7 +5,7 @@
 <br/>
 <p>Then go to : <a href="http://localhost:9000/" target="_blank">Lien app</a></p>
 <p>Login : test@example.com</p>
-<p<Password : password</p>
+<p>Password : password</p>
 <br/>
 <p>Url to test short links : http://localhost:9000/sl/"hash"</p>
 
