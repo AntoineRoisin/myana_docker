@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form method="post" action="{{ route("shorturl.update", $shortUrl->id) }}">
+                            <form method="post" action="{{ route("shorturl.updateCustom", $shortUrl->id) }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="Lien">URL</label>

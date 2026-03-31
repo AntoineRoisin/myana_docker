@@ -37,7 +37,7 @@
                                         <td><span class="shortlink">/sl/{{ $url->short_url }}</span></td>
                                         <td>{{ $url->getValidityDate() }}</td>
                                         <td>{{ $url->visits }}</td>
-                                        <td><a href="{{ route('shorturl.edit', $url) }}"><i class="fa-solid fa-pen-to-square"></i></a> <a href="{{ route('shorturl.destroy', $url) }}"><i class="fa-solid fa-trash"></i></a></td>
+                                        <td><a href="{{ route('shorturl.edit', $url) }}"><i class="fa-solid fa-pen-to-square"></i></a> <a href="{{ route('shorturl.destroyCustom', $url) }}"><i class="fa-solid fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

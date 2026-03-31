@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
+            base: 'http://localhost:9000/'
         }),
     ],
+
 });

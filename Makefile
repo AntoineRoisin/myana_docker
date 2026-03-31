@@ -1,4 +1,5 @@
 setup:
+	@make install-project
 	@make build
 	@make up
 	@make composer-install
@@ -7,6 +8,8 @@ setup:
 	@make storage-rights
 	@make storage-link
 	@make db-sq-light
+	@make env
+	@make key-generate
 	@make data
 
 build:
@@ -31,13 +34,28 @@ storage-link:
 npm-install:
 	docker exec myana-laravel-docker bash -c "npm install"
 npm-run-dev:
-	docker exec myana-laravel-docker bash -c "npm run dev"
-
+	docker exec myana-laravel-docker bash -c "npm install && npm run build"
 data:
 	docker exec myana-laravel-docker bash -c "php artisan migrate"
 	docker exec myana-laravel-docker bash -c "php artisan db:seed"
-
+env:
+	docker exec myana-laravel-docker bash -c "cp .env.example .env"
+key-generate:
+	docker exec myana-laravel-docker bash -c "php artisan key:generate"
 db-sq-light:
 	docker exec myana-laravel-docker bash -c "touch /var/www/html/database/database.sqlite"
-	docker exec myana-laravel-docker bash -c "chmod -R 777 /var/www/html/database/database.sqlite"
+	docker exec myana-laravel-docker bash -c "chgrp -R www-data ."
+	docker exec myana-laravel-docker bash -c "chmod -R g+rw ."
 
+install-project:
+	make build
+	make up
+	make composer-install
+	make npm-install
+	make npm-run-dev
+	make storage-rights
+	make storage-link
+	make db-sq-light
+	make env
+	make key-generate
+	make data
