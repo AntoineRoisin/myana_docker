@@ -1,7 +1,7 @@
 ## Install project
-Git clone in a new directory
-cd in this directory
-Run : make install-project
+<p>Git clone in a new directory</p>
+<p>cd in this directory</p>
+<p>Run : make install-project</p>
 
 Then go to : http://localhost:9000/
 Login : test@example.com
