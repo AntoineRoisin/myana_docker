@@ -2,12 +2,12 @@
 <p>Git clone in a new directory</p>
 <p>cd in this directory</p>
 <p>Run : make install-project</p>
-
-Then go to : http://localhost:9000/
-Login : test@example.com
-Password : password
-
-Url to test short links : http://localhost:9000/sl/"hash"
+<br/>
+<p>Then go to : <a href="http://localhost:9000/" target="_blank">Lien app</a></p>
+<p>Login : test@example.com</p>
+<p<Password : password</p>
+<br/>
+<p>Url to test short links : http://localhost:9000/sl/"hash"</p>
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
