@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Models\ShortLink;
+use App\Models\ShortUrl;
 use App\Models\User;
 use App\Policies\ShortUrlPolicy;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -18,7 +18,7 @@ class DeletingOtherLinksTest extends BaseTestCase
 
         $firstUser = User::factory()->create();
 
-        $shortLink = ShortLink::factory()->create(['user_id' => $firstUser, 'url' => 'http://google.com']);
+        $shortLink = ShortUrl::factory()->create(['user_id' => $firstUser, 'url' => 'http://google.com']);
 
         $secondUser = User::factory()->create();
 
